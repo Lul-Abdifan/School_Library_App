@@ -1,6 +1,6 @@
 require_relative 'app'
 def main
-    puts "Welcome to the School Library\n\n"
+    puts "\nWelcome to the School Library\n\n"
     app = App.new()
     loop do
     options
@@ -11,8 +11,8 @@ def main
   end
   
   def options
-    puts "Please choose an option by entering a number"
-    puts "1 - List all books"
+    puts "\nPlease choose an option by entering a number"
+    puts "\n1 - List all books"
     puts "2 - List all people"
     puts "3 - Create a person"
     puts "4 - Create a book"
@@ -25,7 +25,7 @@ def main
   def handle_input(choice_input,app)
     case choice_input
     when 1
-        app.list_all_book
+        app.list_all_books
     when 2
         app.list_all_peaple
     when 3
