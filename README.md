@@ -1,10 +1,4 @@
-<div align="center">
-  
-  <img src="hope.jpeg" alt="logo" width="140"  height="auto" />
-  <br/>
 
-
-</div>
 
 <!-- TABLE OF CONTENTS -->
 
