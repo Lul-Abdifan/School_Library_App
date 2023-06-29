@@ -115,20 +115,5 @@ class App
       end
       
 
-    def list_all_rentals
-        puts "Rentals:"
-        puts "Id of person:"
-        desired_rental_id = gets.chomp.to_i
-       desired_rentals = @rentals.select { |rental| rental.person.id == desired_rental_id }
-
-       if desired_rentals.empty?
-        puts "Rental not found with ID #{desired_rental_id}"
-      else
-        
-        puts "Books with ID #{desired_rental_id}:"
-        desired_rentals.each do |rental|
-          puts "Date: #{rental.date} Book '#{rental.book.title}' by #{rental.book.author}"
-        end
-      end
-    end
+   
 end
