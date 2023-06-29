@@ -4,8 +4,7 @@ require './trim_decor'
 
 class Person < Nameable
   attr_accessor :name, :age
-  attr_reader :id
-  attr_reader :rentals
+  attr_reader :id, :rentals
 
   def initialize(age, name, parent_permission: true)
     super()
@@ -36,5 +35,3 @@ class Person < Nameable
     of_age? || @parent_permission
   end
 end
-
-
