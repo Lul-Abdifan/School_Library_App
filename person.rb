@@ -4,7 +4,7 @@ require './trim_decor'
 
 class Person < Nameable
   attr_accessor :name, :age
-  attr_writer :id
+  attr_reader :id
   attr_reader :rentals
 
   def initialize(age, name, parent_permission: true)
