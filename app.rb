@@ -98,7 +98,12 @@ class App
   end
 
   def list_all_rentals
-    puts "Rentals:\n Id of person:"
+
+    puts "Rentals:\n"
+    @rentals.each do |rental| 
+      puts "\nName:#{rental.person.name} Rented Id:#{rental.person.id}"
+    end
+    puts "\nId of person:"
     desired_rental_id = gets.chomp.to_i
     desired_rentals = @rentals.select { |rental| rental.person.id == desired_rental_id }
 
