@@ -98,9 +98,8 @@ class App
   end
 
   def list_all_rentals
-
     puts "Rentals:\n"
-    @rentals.each do |rental| 
+    @rentals.each do |rental|
       puts "\nName:#{rental.person.name} Rented Id:#{rental.person.id}"
     end
     puts "\nId of person:"
