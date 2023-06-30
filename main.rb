@@ -22,24 +22,23 @@ def options
 end
 
 def handle_input(choice_input, app)
-  case choice_input
-  when 1
-    app.list_all_books
-  when 2
-    app.list_all_peaple
-  when 3
-    app.create_person
-  when 4
-    app.create_book
-  when 5
-    app.create_rental
-  when 6
-    app.list_all_rentals
-  when 7
-    puts 'Exiting the program. Have a nice time!'
+  actions = {
+    1 => :list_all_books,
+    2 => :list_all_peaple,
+    3 => :create_person,
+    4 => :create_book,
+    5 => :create_rental,
+    6 => :list_all_rentals
+  }
+
+  action = actions[choice_input]
+  if action
+    app.send(action)
+  elsif choice_input == 7
+    puts 'Exited. Have a nice day!'
     exit
   else
-    puts 'Wrong Option,Try Again'
+    puts 'Invalid option'
   end
 end
 
