@@ -21,7 +21,6 @@ class App
       puts "[#{person.class}] Name:#{person.name}, Id:#{person.id}, Age:#{person.age}"
     end
   end
-end
 
   def create_person
     puts 'Do you want a student(1) or a teacher(2)? [input the number]:'
@@ -54,10 +53,9 @@ end
       return
     end
 
-    @people << student if student
+    @people << student
     puts "\nPerson created successfully"
   end
-end
 
   def create_teacher
     print 'Age :'
@@ -67,10 +65,9 @@ end
     print 'Specialization :'
     specialization = String(gets.chomp)
     teacher = Teacher.new(specialization, age, name, parent_permission: true)
-    @people << teacher if teacher
+    @people << teacher
     puts 'Person created successfully'
   end
-end
 
   def create_book
     print 'Title :'
@@ -93,27 +90,25 @@ end
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     selected_person = @people[gets.chomp.to_i]
-      puts 'Date (YYYY-MM-DD):'
-      input_date = gets.chomp
-      created_rental = Rental.new(input_date, selected_person, selected_book)
+    puts 'Date (YYYY-MM-DD):'
+    input_date = gets.chomp
+    created_rental = Rental.new(input_date, selected_person, selected_book)
     @rentals << created_rental
     puts 'Rental Created successfully'
   end
-end
 
-def list_all_rentals
-  puts "Rentals:\n Id of person:"
-  desired_rental_id = gets.chomp.to_i
-  desired_rentals = @rentals.select { |rental| rental.person.id == desired_rental_id }
+  def list_all_rentals
+    puts "Rentals:\n Id of person:"
+    desired_rental_id = gets.chomp.to_i
+    desired_rentals = @rentals.select { |rental| rental.person.id == desired_rental_id }
 
-  if desired_rentals.empty?
-    puts "Rental not found with ID #{desired_rental_id}"
-  else
-    puts "Books with ID #{desired_rental_id}:"
-    desired_rentals.each do |rental|
-      puts "Date: #{rental.date} Book '#{rental.book.title}' by #{rental.book.author}"
+    if desired_rentals.empty?
+      puts "Rental not found with ID #{desired_rental_id}"
+    else
+      puts "Books with ID #{desired_rental_id}:"
+      desired_rentals.each do |rental|
+        puts "Date: #{rental.date} Book '#{rental.book.title}' by #{rental.book.author}"
+      end
     end
   end
 end
-end
-
