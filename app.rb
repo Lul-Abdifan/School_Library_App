@@ -69,7 +69,7 @@ class App
     puts 'Person created successfully'
   end
 
-  def create_book
+  def createbook
     print 'Title :'
     title = String(gets.chomp)
     print 'Author :'
