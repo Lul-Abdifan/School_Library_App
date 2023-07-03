@@ -25,7 +25,7 @@ class View
       def handle_input(choice_input, app)
         actions = {
           1 => :list_all_books,
-          2 => :list_all_peaple,
+          2 => :list_all_people,
           3 => :create_person,
           4 => :create_book,
           5 => :create_rental,

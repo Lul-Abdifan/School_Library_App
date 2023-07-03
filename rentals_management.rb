@@ -1,22 +1,30 @@
 def create_rental
-    puts "\nSelect a book from the following list by number\n"
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: '#{book.title}', Author: '#{book.author}'"
-    end
-    selected_book = @books[gets.chomp.to_i]
-    puts "\nSelect a person from the following list by number\n"
-    @people.each_with_index do |person, index|
-      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-    selected_person = @people[gets.chomp.to_i]
-    puts 'Date (YYYY-MM-DD):'
-    input_date = gets.chomp
-    created_rental = Rental.new(input_date, selected_person, selected_book)
-    @rentals << created_rental
-    puts 'Rental Created successfully'
+      puts "\nSelect a book from the following list by number\n"
+      @books.each_with_index do |book, index|
+        puts "#{index}) Title: '#{book.title}', Author: '#{book.author}'"
+      end
+      selected_book = @books[gets.chomp.to_i]
+    
+      puts "\nSelect a person from the following list by number\n"
+      @people.each_with_index do |person, index|
+        puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
+      selected_person = @people[gets.chomp.to_i]
+    
+      puts 'Date (YYYY-MM-DD):'
+      input_date = gets.chomp
+      created_rental = Rental.new(input_date, selected_person, selected_book)
+      @rentals << created_rental
+    
+      puts 'Rental Created successfully'
   end
+  
+  
 
   def list_all_rentals
+    if @books.empty? || @people.empty?
+        puts "We can't rent"
+      else
     puts "Rentals:\n"
     @rentals.each do |rental|
       puts "\nName:#{rental.person.name} Rented Id:#{rental.person.id}"
@@ -33,4 +41,5 @@ def create_rental
         puts "Date: #{rental.date} Book '#{rental.book.title}' by #{rental.book.author}"
       end
     end
+end
   end
