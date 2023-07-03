@@ -51,7 +51,6 @@ end
     print 'Has parent permission? [Y/N]:'
     permission = gets.chomp.downcase
     parent_permission  = permission == 'y'
-
     if parent_permission || permission == 'n'
     @people << Student.new(nil, age, name, parent_permission: parent_permission)
     puts "\nPerson created successfully"
