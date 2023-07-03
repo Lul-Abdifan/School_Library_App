@@ -10,13 +10,23 @@ class App
     @rentals = []
   end
 
+ private 
+
+ def common_information
+  print 'Age :'
+  age = Integer(gets.chomp)
+  print 'Name :'
+  name = String(gets.chomp)
+  [age,name]
+ end
+
   def list_all_books
     @books.each do |book|
       puts "Title: '#{book.title}', Author: '#{book.author}'"
     end
   end
 
-  def list_all_peaple
+  def list_all_people
     @people.each do |person|
       puts "[#{person.class}] Name:#{person.name}, Id:#{person.id}, Age:#{person.age}"
     end
@@ -24,48 +34,37 @@ class App
 
   def create_person
     puts 'Do you want a student(1) or a teacher(2)? [input the number]:'
+    options = {
+      1 =>method(:create_student),
+      2 =>method(:create_teacher)
+    }
     choice = gets.chomp.to_i
-    case choice
-    when 1
-      create_student
-    when 2
-      create_teacher
+    if options.key?(choice)
+       options[choice].call
     else
       puts 'Incorrect input'
-    end
-  end
+   end
+end
 
   def create_student
-    print 'Age:'
-    age = Integer(gets.chomp)
-    print 'Name:'
-    name = String(gets.chomp)
+   age,name = common_information
     print 'Has parent permission? [Y/N]:'
     permission = gets.chomp.downcase
+    parent_permission  = permission == 'y'
 
-    case permission
-    when 'y'
-      student = Student.new(nil, age, name, parent_permission: true)
-    when 'n'
-      student = Student.new(nil, age, name, parent_permission: false)
-    else
-      puts 'Incorrect input'
-      return
-    end
-
-    @people << student
+    if parent_permission || permission == 'n'
+    @people << Student.new(nil, age, name, parent_permission: parent_permission)
     puts "\nPerson created successfully"
+    else
+      puts "Incorrect Input"
   end
+end
 
   def create_teacher
-    print 'Age :'
-    age = Integer(gets.chomp)
-    print 'Name :'
-    name = String(gets.chomp)
+    age,name = common_information
     print 'Specialization :'
     specialization = String(gets.chomp)
-    teacher = Teacher.new(specialization, age, name, parent_permission: true)
-    @people << teacher
+    @people << Teacher.new(specialization, age, name, parent_permission: true)
     puts 'Person created successfully'
   end
 
