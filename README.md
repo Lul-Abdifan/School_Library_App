@@ -4,7 +4,7 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
+- [📖 School Library App](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -25,11 +25,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 School Library App  <a name="about-project"></a>
 
 > The application displays the available books in the library and tracks the individuals who have borrowed them. It provides the following functionalities: enabling the addition of new students or teachers, allowing the addition of new books, and storing records of book borrowings along with the corresponding dates.
-
-**[your_project__name]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 ### Tech Stack <a name="tech-stack"></a>
@@ -45,8 +43,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **[Displays the available books]**
 - **[Enabling the addition of new students or teachers]**
 - **[Allowing the addition of new books]**
@@ -55,11 +51,9 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-  `<!-- GETTING STARTED -->
+  <!-- GETTING STARTED -->
 
   ## 💻 Getting Started <a name="getting-started"></a>
-
-  > Describe how a new developer could make use of your project.
 
   To get a local copy up and running, follow these steps.`
 
@@ -104,13 +98,17 @@ To run tests, run the following command:
 - Twitter: [@twitterhandle](https://twitter.com/AbdiBekele68808)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/abdi-bekele-a63860254/)
 
+👤 **Yan Min Thwin**
+
+- GitHub: [@anbehindY](https://github.com/anbehindY)
+- Twitter: [@yanminthwin](https://twitter.com/yanminthwin)
+- LinkedIn: [@Yan Min Thwin](https://www.linkedin.com/in/yanminthwin/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Add Best UI]**
 
