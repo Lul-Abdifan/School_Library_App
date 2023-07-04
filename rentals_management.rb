@@ -20,24 +20,21 @@ def create_rental
 end
 
 def list_all_rentals
-  if @books.empty? || @people.empty?
-    puts "We can't rent"
-  else
-    puts "Rentals:\n"
-    @rentals.each do |rental|
-      puts "\nName:#{rental.person.name} Rented Id:#{rental.person.id}"
-    end
-    puts "\nId of person:"
-    desired_rental_id = gets.chomp.to_i
-    desired_rentals = @rentals.select { |rental| rental.person.id == desired_rental_id }
+  puts "We can't rent" if @books.empty? || @people.empty?
+  puts "Rentals:\n"
+  @rentals.each do |rental|
+    puts "\nName:#{rental.person.name} Rented Id:#{rental.person.id}"
+  end
+  puts "\nId of person:"
+  desired_rental_id = gets.chomp.to_i
+  desired_rentals = @rentals.select { |rental| rental.person.id == desired_rental_id }
 
-    if desired_rentals.empty?
-      puts "Rental not found with ID #{desired_rental_id}"
-    else
-      puts "Books with ID #{desired_rental_id}:"
-      desired_rentals.each do |rental|
-        puts "Date: #{rental.date} Book '#{rental.book.title}' by #{rental.book.author}"
-      end
+  if desired_rentals.empty?
+    puts "Rental not found with ID #{desired_rental_id}"
+  else
+    puts "Books with ID #{desired_rental_id}:"
+    desired_rentals.each do |rental|
+      puts "Date: #{rental.date} Book '#{rental.book.title}' by #{rental.book.author}"
     end
   end
 end
